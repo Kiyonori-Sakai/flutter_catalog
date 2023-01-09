@@ -1,16 +1,18 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'catalog_menu_model.dart';
+
 part 'catalog_item_model.freezed.dart';
 part 'catalog_item_model.g.dart';
 
 @freezed
-class CatalogMenu with _$CatalogMenu {
-  const CatalogMenu._();
-  const factory CatalogMenu({
+class CatalogItem with _$CatalogItem {
+  const CatalogItem._();
+  const factory CatalogItem({
     @JsonKey(name: 'category') required String category,
     @JsonKey(name: 'menus') required List<CatalogMenu> menus,
-  }) = _CatalogMenu;
+  }) = _CatalogItem;
 
-  factory CatalogMenu.fromJson(Map<String, dynamic> json) =>
-      _$CatalogMenuFromJson(json);
+  factory CatalogItem.fromJson(Map<String, dynamic> json) =>
+      _$CatalogItemFromJson(json);
 }

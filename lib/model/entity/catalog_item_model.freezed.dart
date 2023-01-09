@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CatalogMenu _$CatalogMenuFromJson(Map<String, dynamic> json) {
-  return _CatalogMenu.fromJson(json);
+CatalogItem _$CatalogItemFromJson(Map<String, dynamic> json) {
+  return _CatalogItem.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CatalogMenu {
+mixin _$CatalogItem {
   @JsonKey(name: 'category')
   String get category => throw _privateConstructorUsedError;
   @JsonKey(name: 'menus')
@@ -27,15 +27,15 @@ mixin _$CatalogMenu {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CatalogMenuCopyWith<CatalogMenu> get copyWith =>
+  $CatalogItemCopyWith<CatalogItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CatalogMenuCopyWith<$Res> {
-  factory $CatalogMenuCopyWith(
-          CatalogMenu value, $Res Function(CatalogMenu) then) =
-      _$CatalogMenuCopyWithImpl<$Res, CatalogMenu>;
+abstract class $CatalogItemCopyWith<$Res> {
+  factory $CatalogItemCopyWith(
+          CatalogItem value, $Res Function(CatalogItem) then) =
+      _$CatalogItemCopyWithImpl<$Res, CatalogItem>;
   @useResult
   $Res call(
       {@JsonKey(name: 'category') String category,
@@ -43,9 +43,9 @@ abstract class $CatalogMenuCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CatalogMenuCopyWithImpl<$Res, $Val extends CatalogMenu>
-    implements $CatalogMenuCopyWith<$Res> {
-  _$CatalogMenuCopyWithImpl(this._value, this._then);
+class _$CatalogItemCopyWithImpl<$Res, $Val extends CatalogItem>
+    implements $CatalogItemCopyWith<$Res> {
+  _$CatalogItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -72,11 +72,11 @@ class _$CatalogMenuCopyWithImpl<$Res, $Val extends CatalogMenu>
 }
 
 /// @nodoc
-abstract class _$$_CatalogMenuCopyWith<$Res>
-    implements $CatalogMenuCopyWith<$Res> {
-  factory _$$_CatalogMenuCopyWith(
-          _$_CatalogMenu value, $Res Function(_$_CatalogMenu) then) =
-      __$$_CatalogMenuCopyWithImpl<$Res>;
+abstract class _$$_CatalogItemCopyWith<$Res>
+    implements $CatalogItemCopyWith<$Res> {
+  factory _$$_CatalogItemCopyWith(
+          _$_CatalogItem value, $Res Function(_$_CatalogItem) then) =
+      __$$_CatalogItemCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,11 +85,11 @@ abstract class _$$_CatalogMenuCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CatalogMenuCopyWithImpl<$Res>
-    extends _$CatalogMenuCopyWithImpl<$Res, _$_CatalogMenu>
-    implements _$$_CatalogMenuCopyWith<$Res> {
-  __$$_CatalogMenuCopyWithImpl(
-      _$_CatalogMenu _value, $Res Function(_$_CatalogMenu) _then)
+class __$$_CatalogItemCopyWithImpl<$Res>
+    extends _$CatalogItemCopyWithImpl<$Res, _$_CatalogItem>
+    implements _$$_CatalogItemCopyWith<$Res> {
+  __$$_CatalogItemCopyWithImpl(
+      _$_CatalogItem _value, $Res Function(_$_CatalogItem) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$_CatalogMenuCopyWithImpl<$Res>
     Object? category = null,
     Object? menus = null,
   }) {
-    return _then(_$_CatalogMenu(
+    return _then(_$_CatalogItem(
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -113,15 +113,15 @@ class __$$_CatalogMenuCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CatalogMenu extends _CatalogMenu {
-  const _$_CatalogMenu(
+class _$_CatalogItem extends _CatalogItem {
+  const _$_CatalogItem(
       {@JsonKey(name: 'category') required this.category,
       @JsonKey(name: 'menus') required final List<CatalogMenu> menus})
       : _menus = menus,
         super._();
 
-  factory _$_CatalogMenu.fromJson(Map<String, dynamic> json) =>
-      _$$_CatalogMenuFromJson(json);
+  factory _$_CatalogItem.fromJson(Map<String, dynamic> json) =>
+      _$$_CatalogItemFromJson(json);
 
   @override
   @JsonKey(name: 'category')
@@ -137,14 +137,14 @@ class _$_CatalogMenu extends _CatalogMenu {
 
   @override
   String toString() {
-    return 'CatalogMenu(category: $category, menus: $menus)';
+    return 'CatalogItem(category: $category, menus: $menus)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CatalogMenu &&
+            other is _$_CatalogItem &&
             (identical(other.category, category) ||
                 other.category == category) &&
             const DeepCollectionEquality().equals(other._menus, _menus));
@@ -158,26 +158,26 @@ class _$_CatalogMenu extends _CatalogMenu {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CatalogMenuCopyWith<_$_CatalogMenu> get copyWith =>
-      __$$_CatalogMenuCopyWithImpl<_$_CatalogMenu>(this, _$identity);
+  _$$_CatalogItemCopyWith<_$_CatalogItem> get copyWith =>
+      __$$_CatalogItemCopyWithImpl<_$_CatalogItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CatalogMenuToJson(
+    return _$$_CatalogItemToJson(
       this,
     );
   }
 }
 
-abstract class _CatalogMenu extends CatalogMenu {
-  const factory _CatalogMenu(
+abstract class _CatalogItem extends CatalogItem {
+  const factory _CatalogItem(
           {@JsonKey(name: 'category') required final String category,
           @JsonKey(name: 'menus') required final List<CatalogMenu> menus}) =
-      _$_CatalogMenu;
-  const _CatalogMenu._() : super._();
+      _$_CatalogItem;
+  const _CatalogItem._() : super._();
 
-  factory _CatalogMenu.fromJson(Map<String, dynamic> json) =
-      _$_CatalogMenu.fromJson;
+  factory _CatalogItem.fromJson(Map<String, dynamic> json) =
+      _$_CatalogItem.fromJson;
 
   @override
   @JsonKey(name: 'category')
@@ -187,6 +187,6 @@ abstract class _CatalogMenu extends CatalogMenu {
   List<CatalogMenu> get menus;
   @override
   @JsonKey(ignore: true)
-  _$$_CatalogMenuCopyWith<_$_CatalogMenu> get copyWith =>
+  _$$_CatalogItemCopyWith<_$_CatalogItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
