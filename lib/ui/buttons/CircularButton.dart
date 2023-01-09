@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ColoredButton extends StatelessWidget {
-  const ColoredButton({Key? key}) : super(key: key);
+class CircularButton extends StatelessWidget {
+  const CircularButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,13 +9,14 @@ class ColoredButton extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: Colors.blue,
+            foregroundColor: Colors.black,
+            backgroundColor: Colors.amber,
+            shape: const StadiumBorder(),
           ),
           onPressed: () {
             /// Write your functions
           },
-          child: const Text('ColoredButton'),
+          child: const Text('CircularButton'),
         ),
       ),
     );
