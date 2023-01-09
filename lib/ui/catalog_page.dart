@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
 const repositoryBaseUrl =
-    'https://github.com/Kiyonori-Sakai/flutter_catalog/blob/lib/ui';
+    'https://github.com/Kiyonori-Sakai/flutter_catalog/blob/main/lib/ui';
 
 class CatalogPage extends ConsumerWidget {
   const CatalogPage({Key? key}) : super(key: key);
@@ -71,7 +71,7 @@ class CatalogPage extends ConsumerWidget {
                   ],
                 ),
               ),
-              const CodeView(),
+              _buildCodeView(context: context, ref: ref),
             ],
           );
         },
@@ -79,20 +79,14 @@ class CatalogPage extends ConsumerWidget {
       ),
     );
   }
-}
 
-class CodeView extends ConsumerWidget {
-  const CodeView({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(
-    BuildContext context,
-    WidgetRef ref,
-  ) {
+  Widget _buildCodeView({
+    required BuildContext context,
+    required WidgetRef ref,
+  }) {
     final category = ref.watch(categoryProvider);
     final filePath = ref.watch(filePathProvider);
+    print('filePath => lib/ui$category/$filePath.dart');
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.4,
       child: Column(
@@ -113,6 +107,7 @@ class CodeView extends ConsumerWidget {
                       text: 'Click Here to GitHub',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
+                          print('$repositoryBaseUrl$category/$filePath.dart');
                           launchUrl(Uri.parse(
                               '$repositoryBaseUrl$category/$filePath.dart'));
                         },
@@ -126,6 +121,66 @@ class CodeView extends ConsumerWidget {
             height: MediaQuery.of(context).size.height - 50,
             child: WidgetWithCodeView(
               filePath: 'lib/ui$category/$filePath.dart',
+              codeLinkPrefix:
+                  'https://github.com/Kiyonori-Sakai/flutter_catalog/blob/main/',
+              showLabelText: true,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CodeView extends ConsumerWidget {
+  const CodeView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(
+    BuildContext context,
+    WidgetRef ref,
+  ) {
+    final category = ref.watch(categoryProvider);
+    final filePath = ref.watch(filePathProvider);
+    print('filePath => lib/ui$category/$filePath.dart');
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.4,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 30,
+            child: Center(
+              child: Text('Code'),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+            child: Center(
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Click Here to GitHub',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          print('$repositoryBaseUrl$category/$filePath.dart');
+                          launchUrl(Uri.parse(
+                              '$repositoryBaseUrl$category/$filePath.dart'));
+                        },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height - 50,
+            child: WidgetWithCodeView(
+              filePath: 'lib/ui/buttons/ButtonWithIcon.dart',
+              codeLinkPrefix:
+                  'https://github.com/Kiyonori-Sakai/flutter_catalog/blob/main/',
               showLabelText: true,
             ),
           ),

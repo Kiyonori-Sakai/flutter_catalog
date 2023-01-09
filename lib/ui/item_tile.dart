@@ -60,17 +60,17 @@ class ItemTile extends ConsumerWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      ref.watch(selectedWidgetProvider.notifier).update(
+                      ref.read(selectedWidgetProvider.notifier).update(
                             (state) => selectFunction(
                               category: category,
                               filePath: file,
                             ),
                           );
                       ref
-                          .watch(categoryProvider.notifier)
+                          .read(categoryProvider.notifier)
                           .update((state) => category);
                       ref
-                          .watch(filePathProvider.notifier)
+                          .read(filePathProvider.notifier)
                           .update((state) => file);
                     },
                     style: ButtonStyle(
@@ -84,9 +84,10 @@ class ItemTile extends ConsumerWidget {
                     child: const Text(
                       'Show',
                       style: TextStyle(
-                          color: Colors.indigo,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
+                        color: Colors.indigo,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
