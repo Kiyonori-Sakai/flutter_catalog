@@ -1,4 +1,4 @@
-# flutter_gui
+# flutter_catalog
 
 A new Flutter project.
 
