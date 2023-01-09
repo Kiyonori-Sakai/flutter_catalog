@@ -9,9 +9,7 @@ part of 'catalog_item_model.dart';
 _$_CatalogItem _$$_CatalogItemFromJson(Map<String, dynamic> json) =>
     _$_CatalogItem(
       category: json['category'] as String,
-      menus: (json['menus'] as List<dynamic>)
-          .map((e) => CatalogMenu.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      menus: (json['menus'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$_CatalogItemToJson(_$_CatalogItem instance) =>

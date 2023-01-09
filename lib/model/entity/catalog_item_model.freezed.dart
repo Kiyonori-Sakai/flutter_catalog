@@ -23,7 +23,7 @@ mixin _$CatalogItem {
   @JsonKey(name: 'category')
   String get category => throw _privateConstructorUsedError;
   @JsonKey(name: 'menus')
-  List<CatalogMenu> get menus => throw _privateConstructorUsedError;
+  List<String> get menus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,7 +39,7 @@ abstract class $CatalogItemCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'category') String category,
-      @JsonKey(name: 'menus') List<CatalogMenu> menus});
+      @JsonKey(name: 'menus') List<String> menus});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$CatalogItemCopyWithImpl<$Res, $Val extends CatalogItem>
       menus: null == menus
           ? _value.menus
           : menus // ignore: cast_nullable_to_non_nullable
-              as List<CatalogMenu>,
+              as List<String>,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$_CatalogItemCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'category') String category,
-      @JsonKey(name: 'menus') List<CatalogMenu> menus});
+      @JsonKey(name: 'menus') List<String> menus});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class __$$_CatalogItemCopyWithImpl<$Res>
       menus: null == menus
           ? _value._menus
           : menus // ignore: cast_nullable_to_non_nullable
-              as List<CatalogMenu>,
+              as List<String>,
     ));
   }
 }
@@ -116,7 +116,7 @@ class __$$_CatalogItemCopyWithImpl<$Res>
 class _$_CatalogItem extends _CatalogItem {
   const _$_CatalogItem(
       {@JsonKey(name: 'category') required this.category,
-      @JsonKey(name: 'menus') required final List<CatalogMenu> menus})
+      @JsonKey(name: 'menus') required final List<String> menus})
       : _menus = menus,
         super._();
 
@@ -126,10 +126,10 @@ class _$_CatalogItem extends _CatalogItem {
   @override
   @JsonKey(name: 'category')
   final String category;
-  final List<CatalogMenu> _menus;
+  final List<String> _menus;
   @override
   @JsonKey(name: 'menus')
-  List<CatalogMenu> get menus {
+  List<String> get menus {
     if (_menus is EqualUnmodifiableListView) return _menus;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_menus);
@@ -172,7 +172,7 @@ class _$_CatalogItem extends _CatalogItem {
 abstract class _CatalogItem extends CatalogItem {
   const factory _CatalogItem(
           {@JsonKey(name: 'category') required final String category,
-          @JsonKey(name: 'menus') required final List<CatalogMenu> menus}) =
+          @JsonKey(name: 'menus') required final List<String> menus}) =
       _$_CatalogItem;
   const _CatalogItem._() : super._();
 
@@ -184,7 +184,7 @@ abstract class _CatalogItem extends CatalogItem {
   String get category;
   @override
   @JsonKey(name: 'menus')
-  List<CatalogMenu> get menus;
+  List<String> get menus;
   @override
   @JsonKey(ignore: true)
   _$$_CatalogItemCopyWith<_$_CatalogItem> get copyWith =>

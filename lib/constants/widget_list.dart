@@ -10,7 +10,7 @@ import '../ui/buttons/TextButtonWidget.dart';
 
 const widgetList = <Map<String, List<Widget>>>[
   {
-    'buttons': [
+    '/buttons': [
       ButtonWithIcon(),
       CircularButton(),
       ColoredButton(),
